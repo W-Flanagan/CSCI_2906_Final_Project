@@ -17,38 +17,38 @@ public class Bishop extends Piece{
 
         for(int i=x-1, j=y+1; i>=0 && j<8; i--, j++){
                 name = "Square" + i + j;
-                if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
 
                 possibleMoves.add(name);
 
-                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
         }
 
         for(int i=x+1, j=y+1; i<8 && j<8; i++, j++){
                 name = "Square" + i + j;
-                if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
 
                 possibleMoves.add(name);
 
-                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
         }
 
         for(int i=x+1, j=y-1; i<8 && j>=0; i++, j--){
                 name = "Square" + i + j;
-                if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
 
                 possibleMoves.add(name);
 
-                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
         }
 
         for(int i=x-1, j=y-1; i>=0 && j>=0; i--, j--){
                 name = "Square" + i + j;
-                if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
 
                 possibleMoves.add(name);
 
-                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+                if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
         }
 
 

@@ -1,16 +1,15 @@
 import javafx.geometry.Insets;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-
 import java.util.ArrayList;
 
-public class ChessBoard {
+public class Board {
 
     GridPane chessBoard;
     String theme;
     public ArrayList<Square> squares = new ArrayList<>();
 
-    public ChessBoard(GridPane chessBoard, String theme){
+    public Board(GridPane chessBoard, String theme){
         this.chessBoard = chessBoard;
         this.theme = theme;
 
@@ -36,8 +35,34 @@ public class ChessBoard {
     }
 
     private void setTheme(Square square, String theme, int i, int j){
-        Color color1 = Color.web("WHITE");
-        Color color2 = Color.web("BLACK");
+        Color color1 = Color.DARKGRAY;
+        Color color2 = Color.WHITE;
+        
+        switch(theme){
+            
+            case "Halo": {
+                color1 = Color.RED;
+                color2 = Color.BLUE;
+            }
+            
+            case "Banjo": {
+                color1 = Color.CHOCOLATE;
+                color2 = Color.DARKORANGE;
+            }
+            
+            case "Ariel":{
+                color1 = Color.AQUA;
+                color2 = Color.FIREBRICK;
+            }
+            case "Neon":{
+                color1 = Color.LAWNGREEN;
+                color2 = Color.AQUAMARINE;
+            }
+            case "Standard": {
+                color1 = Color.DARKGRAY;
+                color2 = Color.WHITE;
+            }
+        }
 
         if((i+j)%2==0){
             square.setBackground(new Background(new BackgroundFill(color1, CornerRadii.EMPTY, Insets.EMPTY)));

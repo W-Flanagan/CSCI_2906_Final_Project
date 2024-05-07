@@ -17,38 +17,38 @@ public class Rook extends Piece{
 
         for(int i=x-1; i>=0; i--){
             name = "Square" + i + y;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
 
             possibleMoves.add(name);
 
-            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
         }
 
         for(int i=x+1; i<8; i++){
             name = "Square" + i + y;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
 
             possibleMoves.add(name);
 
-            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
         }
 
         for(int j=y-1; j>=0; j--){
             name = "Square" + x + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
 
             possibleMoves.add(name);
 
-            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
         }
 
         for(int j=y+1; j<8; j++){
             name = "Square" + x + j;
-            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if(getSquareByName(name).occupied && getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
 
             possibleMoves.add(name);
 
-            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Game.currentPlayer)) break;
+            if(getSquareByName(name).occupied && !getPieceByName(name).getColor().equals(Chess.currentPlayer)) break;
         }
 
 

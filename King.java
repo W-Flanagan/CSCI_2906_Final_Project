@@ -26,7 +26,7 @@ public class King extends Piece{
 
         for(String move : moves){
             if(getSquareByName(move) != null){
-                if(getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Game.currentPlayer)) continue;
+                if(getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Chess.currentPlayer)) continue;
 
                 possibleMoves.add(move);
 

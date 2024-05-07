@@ -5,15 +5,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
-public class Game {
+public class Chess {
 
     public static Piece currentPiece;
     public static String currentPlayer;
-    public static ChessBoard cb;
+    public static Board cb;
     private boolean game;
 
-    public Game(GridPane chessBoard, String theme){
-        cb = new ChessBoard(chessBoard, theme);
+    public Chess(GridPane chessBoard, String theme){
+        cb = new Board(chessBoard, theme);
         currentPiece = null;
         currentPlayer = "white";
         this.game = true;
@@ -34,7 +34,7 @@ public class Game {
                         // Selecting a new piece
                         if(currentPiece == null){
                             currentPiece = newPiece;
-//                            currentPiece.getAllPossibleMoves();
+                            currentPiece.getAllPossibleMoves();
                             if(!currentPiece.getColor().equals(currentPlayer)){
                                 currentPiece = null;
                                 return;
@@ -46,7 +46,7 @@ public class Game {
                             if(currentPiece.color.equals(newPiece.color)){
                                 deselectPiece(false);
                                 currentPiece = newPiece;
-//                                currentPiece.getAllPossibleMoves();
+                                currentPiece.getAllPossibleMoves();
                                 selectPiece(game);
                             }
                             else{

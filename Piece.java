@@ -30,7 +30,7 @@ public class Piece extends ImageView {
     }
 
     public void setImage(){
-            this.setPiece(new Image("sample/pieces/" + this .color + "" + this.type + ".png"));
+            this.setPiece(new Image("pieces/" + this .color + "" + this.type + ".png"));
 
     }
 
@@ -78,7 +78,7 @@ public class Piece extends ImageView {
     }
 
     public Square getSquareByName(String name){
-        for(Square square : Game.cb.squares){
+        for(Square square : Chess.cb.squares){
             if(square.name.equals(name)){
                 return square;
             }
@@ -88,7 +88,7 @@ public class Piece extends ImageView {
     }
 
     public Piece getPieceByName(String name){
-        for(Square square : Game.cb.squares){
+        for(Square square : Chess.cb.squares){
             if(square.getChildren().size() == 0) continue;
 
             if(square.name.equals(name))
