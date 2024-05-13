@@ -29,6 +29,8 @@ public class Pawn extends Piece {
 
         for(String move : moves){
             if(getSquareByName(move) != null){
+                if(getSquareByName(move).occupied && getSquareByName(move).x == posX) break;
+                
                 if(getSquareByName(move).occupied && getPieceByName(move).getColor().equals(Chess.currentPlayer)) continue;
 
                 if(!getSquareByName(move).occupied && getSquareByName(move).x != posX) continue;

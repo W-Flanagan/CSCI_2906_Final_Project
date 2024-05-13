@@ -50,7 +50,7 @@ public class Piece extends ImageView {
     public void showAllPossibleMoves(boolean val){
         if(val){
             Glow glow = new Glow();
-            glow.setLevel(0.3);
+            glow.setLevel(0.6);
             for(String move : possibleMoves){
                 Square square = getSquareByName(move);
                 square.setEffect(glow);

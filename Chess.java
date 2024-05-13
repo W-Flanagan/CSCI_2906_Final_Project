@@ -10,7 +10,7 @@ public class Chess {
     public static Piece currentPiece;
     public static String currentPlayer;
     public static Board cb;
-    private boolean game;
+    public boolean game;
 
     public Chess(GridPane chessBoard, String theme){
         cb = new Board(chessBoard, theme);
@@ -26,12 +26,12 @@ public class Chess {
             public void handle(MouseEvent event) {
                 EventTarget target = event.getTarget();
 
-                // Clicked on square
+                
                 if(target.toString().equals("Square")){
                     Square square = (Square) target;
                     if(square.occupied){
                         Piece newPiece = (Piece) square.getChildren().get(0);
-                        // Selecting a new piece
+                        
                         if(currentPiece == null){
                             currentPiece = newPiece;
                             currentPiece.getAllPossibleMoves();
@@ -41,7 +41,7 @@ public class Chess {
                             }
                             selectPiece(game);
                         }
-                        // Selecting other piece of same color || Killing a piece
+                        
                         else{
                             if(currentPiece.color.equals(newPiece.color)){
                                 deselectPiece(false);
@@ -50,21 +50,21 @@ public class Chess {
                                 selectPiece(game);
                             }
                             else{
-                                killPiece(square);
+                                capture(square);
                             }
                         }
 
                     }
-                    // Dropping a piece on blank square
+                    
                     else{
                         dropPiece(square);
                     }
                 }
-                // Clicked on piece
+                
                 else{
                     Piece newPiece = (Piece) target;
                     Square square = (Square) newPiece.getParent();
-                    // Selecting a new piece
+                    
                     if(currentPiece == null){
                         currentPiece = newPiece;
                         if(!currentPiece.getColor().equals(currentPlayer)){
@@ -73,7 +73,7 @@ public class Chess {
                         }
                         selectPiece(game);
                     }
-                    // Selecting other piece of same color || Killing a piece
+                    
                     else{
                         if(currentPiece.color.equals(newPiece.color)){
                             deselectPiece(false);
@@ -81,7 +81,7 @@ public class Chess {
                             selectPiece(game);
                         }
                         else{
-                            killPiece(square);
+                            capture(square);
                         }
                     }
 
@@ -125,11 +125,12 @@ public class Chess {
         deselectPiece(true);
     }
 
-    private void killPiece(Square square){
+    private void capture(Square square){
         if(!currentPiece.possibleMoves.contains(square.name)) return;
 
-        Piece killedPiece = (Piece) square.getChildren().get(0);
-        if(killedPiece.type.equals("King")) this.game = false;
+        Piece capPiece = (Piece) square.getChildren().get(0);
+        if(capPiece.type.equals("King")) this.game = false;
+        
 
 
         Square initialSquare = (Square) currentPiece.getParent();

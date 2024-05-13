@@ -36,7 +36,7 @@ public class Board {
 
     private void setTheme(Square square, String theme, int i, int j){
         Color color1 = Color.DARKGRAY;
-        Color color2 = Color.WHITE;
+        Color color2 = Color.BROWN;
         
         switch(theme){
             
@@ -60,7 +60,7 @@ public class Board {
             }
             case "Standard": {
                 color1 = Color.DARKGRAY;
-                color2 = Color.WHITE;
+                color2 = Color.BROWN;
             }
         }
 
